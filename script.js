@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     navMenu.classList.toggle('show');
   });
 
-  // 2. ACESSIBILIDADE: CONTROLE DE FONTE
+  // 2. ACESSIBILIDADE: TAMANHO DE FONTE
   let fontScale = 1;
   const btnFontIncrease = document.getElementById('btn-font-increase');
   const btnFontDecrease = document.getElementById('btn-font-decrease');
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 3. ACESSIBILIDADE: MODO ESCURO E ALTO CONTRASTE
+  // 3. MODO ESCURO E ALTO CONTRASTE
   const btnDarkMode = document.getElementById('btn-dark-mode');
   const btnContrast = document.getElementById('btn-contrast');
 
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.remove('dark-mode');
   });
 
-  // 4. PORTAL DE ESCUTA ANÔNIMO
+  // 4. SELETOR DE EMOÇÕES E PORTAL DE ESCUTA
   const emotionBtns = document.querySelectorAll('.btn-emotion');
   const formEscuta = document.getElementById('form-escuta');
   const escutaFeedback = document.getElementById('escuta-feedback');
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     formEscuta.classList.remove('hidden');
   });
 
-  // 5. QUIZ INTERATIVO E BARRA DE PROGRESSO
+  // 5. QUIZ INTERATIVO
   const quizForm = document.getElementById('quiz-form');
   const quizResult = document.getElementById('quiz-result');
   const progressBar = document.getElementById('quiz-progress-bar');
@@ -103,14 +103,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (resultScore) resultScore.textContent = `${score} / 5`;
 
     if (score === 5) {
-      resultTitle.textContent = "Excelente! Parabéns! 🎉";
-      resultMsg.textContent = "Você compreende perfeitamente a importância da empatia, do respeito e da segurança escolar!";
+      resultTitle.textContent = "Incrível! 🎉";
+      resultMsg.textContent = "Você é um verdadeiro exemplo de empatia e consciência escolar!";
     } else if (score >= 3) {
       resultTitle.textContent = "Muito Bom! 👍";
-      resultMsg.textContent = "Você já possui uma ótima noção sobre acolhimento e combate ao bullying. Continue espalhando boas atitudes!";
+      resultMsg.textContent = "Você demonstra grande respeito pelos colegas. Continue praticando o bem!";
     } else {
-      resultTitle.textContent = "Continue Aprendendo! 🌱";
-      resultMsg.textContent = "O ambiente escolar melhora quando todos se informam e exercitam a empatia. Revise o material da página e tente novamente!";
+      resultTitle.textContent = "Vamos Juntos Aprendendo! 🌱";
+      resultMsg.textContent = "A empatia se constrói no dia a dia. Dê uma olhadinha nos tópicos de prevenção e tente novamente!";
     }
   });
 
