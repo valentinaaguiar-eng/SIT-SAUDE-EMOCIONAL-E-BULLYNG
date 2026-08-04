@@ -1,112 +1,124 @@
-// --- NAVEGAÇÃO POR ABAS (SPA) ---
-function switchTab(tabId) {
-    const sections = document.querySelectorAll('.page-section');
-    const buttons = document.querySelectorAll('.nav-btn');
+document.addEventListener('DOMContentLoaded', () => {
 
-    sections.forEach(sec => sec.classList.remove('active'));
-    buttons.forEach(btn => btn.classList.remove('active'));
+  // 1. MENU MOBILE
+  const menuToggle = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
 
-    document.getElementById(tabId).classList.add('active');
-    
-    // Atualiza botão ativo
-    const activeBtn = Array.from(buttons).find(b => b.getAttribute('onclick').includes(tabId));
-    if (activeBtn) activeBtn.classList.add('active');
+  menuToggle?.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  });
 
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+  // 2. ACESSIBILIDADE: CONTROLE DE FONTE
+  let fontScale = 1;
+  const btnFontIncrease = document.getElementById('btn-font-increase');
+  const btnFontDecrease = document.getElementById('btn-font-decrease');
 
-// --- ACESSIBILIDADE: MODO ESCURO E ALTO CONTRASTE ---
-const btnDarkMode = document.getElementById('btn-dark-mode');
-const btnHighContrast = document.getElementById('btn-high-contrast');
-
-btnDarkMode.addEventListener('click', () => {
-    document.body.classList.removeClass('high-contrast-theme');
-    document.body.classList.toggle('dark-theme');
-});
-
-btnHighContrast.addEventListener('click', () => {
-    document.body.classList.removeClass('dark-theme');
-    document.body.classList.toggle('high-contrast-theme');
-});
-
-// --- ACESSIBILIDADE: AUMENTAR/DIMINUIR FONTE ---
-let currentFontSize = 16;
-document.getElementById('btn-font-increase').addEventListener('click', () => {
-    if (currentFontSize < 22) {
-        currentFontSize += 2;
-        document.documentElement.style.setProperty('--font-base', `${currentFontSize}px`);
+  btnFontIncrease?.addEventListener('click', () => {
+    if (fontScale < 1.3) {
+      fontScale += 0.08;
+      document.documentElement.style.setProperty('--font-scale', fontScale);
     }
-});
+  });
 
-document.getElementById('btn-font-decrease').addEventListener('click', () => {
-    if (currentFontSize > 12) {
-        currentFontSize -= 2;
-        document.documentElement.style.setProperty('--font-base', `${currentFontSize}px`);
+  btnFontDecrease?.addEventListener('click', () => {
+    if (fontScale > 0.85) {
+      fontScale -= 0.08;
+      document.documentElement.style.setProperty('--font-scale', fontScale);
     }
-});
+  });
 
-// --- FORMULÁRIO DE ESCUTA ANÔNIMO ---
-const ventForm = document.getElementById('ventForm');
-const autoReply = document.getElementById('autoReply');
+  // 3. ACESSIBILIDADE: MODO ESCURO E ALTO CONTRASTE
+  const btnDarkMode = document.getElementById('btn-dark-mode');
+  const btnContrast = document.getElementById('btn-contrast');
 
-ventForm.addEventListener('submit', (e) => {
+  btnDarkMode?.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    document.body.classList.remove('high-contrast');
+  });
+
+  btnContrast?.addEventListener('click', () => {
+    document.body.classList.toggle('high-contrast');
+    document.body.classList.remove('dark-mode');
+  });
+
+  // 4. PORTAL DE ESCUTA ANÔNIMO
+  const emotionBtns = document.querySelectorAll('.btn-emotion');
+  const formEscuta = document.getElementById('form-escuta');
+  const escutaFeedback = document.getElementById('escuta-feedback');
+  const btnNovoDesabafo = document.getElementById('btn-novo-desabafo');
+
+  emotionBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      emotionBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  formEscuta?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    formEscuta.classList.add('hidden');
+    escutaFeedback.classList.remove('hidden');
+  });
+
+  btnNovoDesabafo?.addEventListener('click', () => {
+    formEscuta.reset();
+    escutaFeedback.classList.add('hidden');
+    formEscuta.classList.remove('hidden');
+  });
+
+  // 5. QUIZ INTERATIVO E BARRA DE PROGRESSO
+  const quizForm = document.getElementById('quiz-form');
+  const quizResult = document.getElementById('quiz-result');
+  const progressBar = document.getElementById('quiz-progress-bar');
+  const resultScore = document.getElementById('result-score');
+  const resultTitle = document.getElementById('result-title');
+  const resultMsg = document.getElementById('result-msg');
+  const btnRetryQuiz = document.getElementById('btn-retry-quiz');
+
+  quizForm?.addEventListener('change', () => {
+    const answeredCount = document.querySelectorAll('#quiz-form input[type="radio"]:checked').length;
+    const progressPercent = (answeredCount / 5) * 100;
+    if (progressBar) progressBar.style.width = `${progressPercent}%`;
+  });
+
+  quizForm?.addEventListener('submit', (e) => {
     e.preventDefault();
     
-    // Exibe resposta com animação
-    autoReply.classList.remove('hidden');
-    
-    // Limpa o formulário sem salvar nada
-    ventForm.reset();
-});
-
-// --- LÓGICA DO QUIZ (5 PERGUNTAS) ---
-const quizForm = document.getElementById('quizForm');
-const quizResult = document.getElementById('quizResult');
-
-const correctAnswers = {
-    q1: 'sim',
-    q2: 'nao',
-    q3: 'correto',
-    q4: 'nao',
-    q5: 'nao'
-};
-
-quizForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
     let score = 0;
-    const formData = new FormData(quizForm);
+    const q1 = document.querySelector('input[name="q1"]:checked')?.value;
+    const q2 = document.querySelector('input[name="q2"]:checked')?.value;
+    const q3 = document.querySelector('input[name="q3"]:checked')?.value;
+    const q4 = document.querySelector('input[name="q4"]:checked')?.value;
+    const q5 = document.querySelector('input[name="q5"]:checked')?.value;
 
-    for (let [question, answer] of formData.entries()) {
-        if (correctAnswers[question] === answer) {
-            score++;
-        }
-    }
+    if (q1 === 'correct') score++;
+    if (q2 === 'correct') score++;
+    if (q3 === 'correct') score++;
+    if (q4 === 'correct') score++;
+    if (q5 === 'correct') score++;
 
-    // Exibe resultado
+    quizForm.classList.add('hidden');
     quizResult.classList.remove('hidden');
-    quizResult.innerHTML = `
-        <i class="fa-solid fa-trophy" style="color: var(--accent); font-size: 2rem; margin-bottom: 0.5rem;"></i>
-        <p>Você acertou <strong>${score} de 5</strong> perguntas!</p>
-        <p style="font-size: 0.95rem; font-weight: normal; margin-top: 0.5rem;">
-            ${score >= 4 ? 'Parabéns! Você demonstra uma excelente compreensão sobre respeito e empatia.' : 'Bom esforço! Continue aprendendo sobre como promover um ambiente mais seguro.'}
-        </p>
-    `;
 
-    quizResult.scrollIntoView({ behavior: 'smooth' });
-});
+    if (resultScore) resultScore.textContent = `${score} / 5`;
 
-// --- BOTÃO VOLTAR AO TOPO ---
-const btnBackToTop = document.getElementById('btn-back-to-top');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        btnBackToTop.style.display = 'block';
+    if (score === 5) {
+      resultTitle.textContent = "Excelente! Parabéns! 🎉";
+      resultMsg.textContent = "Você compreende perfeitamente a importância da empatia, do respeito e da segurança escolar!";
+    } else if (score >= 3) {
+      resultTitle.textContent = "Muito Bom! 👍";
+      resultMsg.textContent = "Você já possui uma ótima noção sobre acolhimento e combate ao bullying. Continue espalhando boas atitudes!";
     } else {
-        btnBackToTop.style.display = 'none';
+      resultTitle.textContent = "Continue Aprendendo! 🌱";
+      resultMsg.textContent = "O ambiente escolar melhora quando todos se informam e exercitam a empatia. Revise o material da página e tente novamente!";
     }
-});
+  });
 
-btnBackToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  btnRetryQuiz?.addEventListener('click', () => {
+    quizForm.reset();
+    if (progressBar) progressBar.style.width = '0%';
+    quizResult.classList.add('hidden');
+    quizForm.classList.remove('hidden');
+  });
+
 });

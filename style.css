@@ -1,460 +1,377 @@
-/* --- VARIÁVEIS DE CORES E TEMAS --- */
-:root {
-    --bg-main: #f0f4f8;
-    --bg-card: #ffffff;
-    --text-color: #2d3748;
-    --text-muted: #64748b;
-    --primary: #3b82f6;
-    --primary-hover: #2563eb;
-    --secondary: #10b981;
-    --accent: #f59e0b;
-    --border: #e2e8f0;
-    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-    --radius: 16px;
-    --font-base: 16px;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saúde Emocional & Combate ao Bullying | Acolher & Proteger</title>
 
-/* Modo Escuro */
-body.dark-theme {
-    --bg-main: #0f172a;
-    --bg-card: #1e293b;
-    --text-color: #f1f5f9;
-    --text-muted: #94a3b8;
-    --border: #334155;
-    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-/* Alto Contraste */
-body.high-contrast-theme {
-    --bg-main: #000000;
-    --bg-card: #000000;
-    --text-color: #ffff00;
-    --text-muted: #ffffff;
-    --primary: #ffff00;
-    --primary-hover: #ffffff;
-    --secondary: #00ff00;
-    --border: #ffffff;
-}
+  <div class="accessibility-bar">
+    <div class="container accessibility-content">
+      <span class="accessibility-title"><i class="fa-solid fa-universal-access"></i> Acessibilidade:</span>
+      <div class="accessibility-btns">
+        <button id="btn-font-increase" title="Aumentar Fonte">A+</button>
+        <button id="btn-font-decrease" title="Diminuir Fonte">A-</button>
+        <button id="btn-dark-mode" title="Alternar Modo Escuro"><i class="fa-solid fa-moon"></i> Modo Escuro</button>
+        <button id="btn-contrast" title="Alto Contraste"><i class="fa-solid fa-circle-half-stroke"></i> Alto Contraste</button>
+      </div>
+    </div>
+  </div>
 
-/* --- ESTILOS GERAIS --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#inicio" class="logo">
+        <i class="fa-solid fa-heart-pulse logo-icon"></i>
+        <span>Acolher <strong>& Proteger</strong></span>
+      </a>
 
-html {
-    font-size: var(--font-base);
-    scroll-behavior: smooth;
-}
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
 
-body {
-    background-color: var(--bg-main);
-    color: var(--text-color);
-    line-height: 1.6;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#inicio" class="nav-link active">Início</a>
+        <a href="#escuta" class="nav-link">Portal de Escuta</a>
+        <a href="#ajuda" class="nav-link">Com Quem Falar</a>
+        <a href="#quiz" class="nav-link">Quiz</a>
+        <a href="#referencias" class="nav-link">Referências</a>
+      </nav>
+    </div>
+  </header>
 
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-}
+  <section id="inicio" class="hero-section">
+    <div class="container hero-container">
+      <div class="hero-badge"><i class="fa-solid fa-shield-heart"></i> Ambiente Escolar Seguro & Empático</div>
+      <h1 class="hero-title">Saúde Emocional e o Combate ao Bullying nas Escolas</h1>
+      <p class="hero-subtitle">"Você não está sozinho nessa." Um espaço dedicado a ouvir, acolher, orientar e promover o respeito no ambiente escolar.</p>
+      
+      <div class="hero-actions">
+        <a href="#escuta" class="btn btn-primary"><i class="fa-solid fa-comment-dots"></i> Portal de Escuta</a>
+        <a href="#quiz" class="btn btn-secondary"><i class="fa-solid fa-list-check"></i> Fazer o Quiz</a>
+      </div>
 
-/* --- BARRA DE ACESSIBILIDADE --- */
-.accessibility-bar {
-    background-color: #1e293b;
-    padding: 0.5rem 0;
-}
+      <div class="pilares-grid">
+        <div class="pillar-card">
+          <div class="pillar-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Empatia e Respeito">
+            <span class="pillar-tag">Empatia</span>
+          </div>
+          <div class="pillar-content">
+            <h3><i class="fa-solid fa-hands-holding-heart"></i> Empatia e Respeito</h3>
+            <p>Reconhecer e valorizar as diferenças individuais é o pilar fundamental para transformar a cultura da nossa escola num espaço acolhedor.</p>
+          </div>
+        </div>
 
-.accessibility-container {
-    display: flex;
-    justify-content: flex-end;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-}
+        <div class="pillar-card">
+          <div class="pillar-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80" alt="Sua Voz Tem Valor">
+            <span class="pillar-tag">Voz</span>
+          </div>
+          <div class="pillar-content">
+            <h3><i class="fa-solid fa-comments"></i> Sua Voz Tem Valor</h3>
+            <p>Expressar o que você sente é o primeiro passo para aliviar o peso do sofrimento emocional. Falar sempre é o caminho mais seguro.</p>
+          </div>
+        </div>
 
-.accessibility-container button {
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
-    padding: 0.3rem 0.7rem;
-    font-size: 0.8rem;
-    border-radius: 6px;
-    cursor: pointer;
-}
+        <div class="pillar-card">
+          <div class="pillar-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="Juntos Somos Mais Fortes">
+            <span class="pillar-tag">União</span>
+          </div>
+          <div class="pillar-content">
+            <h3><i class="fa-solid fa-people-group"></i> Juntos Somos Mais Fortes</h3>
+            <p>Combater o bullying e o cyberbullying exige a união consciente de alunos, professores, orientação pedagógica e famílias.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-.accessibility-container button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
+  <section id="escuta" class="section portal-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-solid fa-user-shield"></i> Espaço Seguro e 100% Anônimo</span>
+        <h2>Portal de Escuta Anônimo</h2>
+        <p>Sinta-se à vontade para desabafar. Nenhuma informação digitada aqui é salva ou enviada para servidores externos.</p>
+      </div>
 
-/* --- CABEÇALHO --- */
-.main-header {
-    background-color: var(--bg-card);
-    border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: var(--shadow);
-}
+      <div class="escuta-box">
+        <form id="form-escuta">
+          <label class="form-label">Como você está se sentindo hoje?</label>
+          <div class="emotions-picker">
+            <button type="button" class="btn-emotion" data-emotion="Triste">😟 Triste</button>
+            <button type="button" class="btn-emotion" data-emotion="Ansioso">😰 Ansioso</button>
+            <button type="button" class="btn-emotion" data-emotion="Com Raiva">😡 Com Raiva</button>
+            <button type="button" class="btn-emotion" data-emotion="Confuso">😕 Confuso</button>
+            <button type="button" class="btn-emotion active" data-emotion="Esperançoso">🌱 Esperançoso</button>
+          </div>
 
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1.5rem;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
+          <label for="desabafo-text" class="form-label">Escreva seu desabafo ou pensamentos:</label>
+          <textarea id="desabafo-text" placeholder="Digite aqui livremente o que está em seu coração..." rows="5" required></textarea>
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-weight: 800;
-    font-size: 1.2rem;
-    color: var(--primary);
-}
+          <button type="submit" class="btn btn-primary btn-block">
+            <i class="fa-solid fa-paper-plane"></i> Enviar Desabafo Anônimo
+          </button>
+        </form>
 
-.logo-icon {
-    font-size: 1.5rem;
-}
+        <div id="escuta-feedback" class="escuta-feedback hidden">
+          <div class="feedback-icon"><i class="fa-solid fa-heart-circle-check"></i></div>
+          <h3>Sua mensagem foi recebida com carinho!</h3>
+          <p>Obrigado por ter a coragem de compartilhar seus sentimentos. Lembre-se: guardar emoções pesadas sozinho pode ser exaustivo. Respire fundo, cuide de você e considere buscar apoio com pessoas de confiança.</p>
+          <button id="btn-novo-desabafo" class="btn btn-outline">Escrever outro desabafo</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-.main-nav {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-}
+  <section class="section quotes-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Gotas de Inspiração</h2>
+        <p>Reflexões para fortalecer sua jornada diária.</p>
+      </div>
 
-.nav-btn {
-    background: transparent;
-    border: none;
-    color: var(--text-muted);
-    padding: 0.6rem 1rem;
-    font-weight: 600;
-    border-radius: 8px;
-    cursor: pointer;
-}
+      <div class="quotes-grid">
+        <div class="quote-card">
+          <i class="fa-solid fa-quote-left quote-icon"></i>
+          <p>"Ninguém pode fazer você se sentir inferior sem o seu consentimento."</p>
+          <span>— Eleanor Roosevelt</span>
+        </div>
+        <div class="quote-card">
+          <i class="fa-solid fa-quote-left quote-icon"></i>
+          <p>"Pedir ajuda não é sinal de fraqueza, mas sim o primeiro passo para a coragem."</p>
+          <span>— Apoio Emocional</span>
+        </div>
+        <div class="quote-card">
+          <i class="fa-solid fa-quote-left quote-icon"></i>
+          <p>"Seu valor não diminui com base na incapacidade de alguém em enxergar sua importância."</p>
+          <span>— Autocuidado</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-.nav-btn:hover {
-    color: var(--primary);
-}
+  <section id="ajuda" class="section help-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-solid fa-hand-holding-hand"></i> Rede de Apoio</span>
+        <h2>Com quem procurar ajuda?</h2>
+        <p>Se você ou um colega está enfrentando situações de bullying ou sofrimento psicológico, procure suporte imediatamente:</p>
+      </div>
 
-.nav-btn.active {
-    background-color: var(--primary);
-    color: white !important;
-}
+      <div class="help-grid">
+        <div class="help-card">
+          <div class="help-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+          <h3>Professores</h3>
+          <p>Acompanham sua rotina escolar diariamente e podem intervir rapidamente para sanar situações de desrespeito.</p>
+        </div>
 
-/* --- CONTEÚDO PRINCIPAL --- */
-.content-area {
-    margin-top: 2rem;
-    margin-bottom: 3rem;
-    flex: 1;
-}
+        <div class="help-card">
+          <div class="help-icon"><i class="fa-solid fa-user-graduate"></i></div>
+          <h3>Pedagogo / Orientador</h3>
+          <p>Profissionais qualificados para escutar suas emoções com sigilo, acolher angústias e mediar conflitos.</p>
+        </div>
 
-.page-section {
-    display: none;
-    animation: fadeIn 0.4s ease;
-}
+        <div class="help-card">
+          <div class="help-icon"><i class="fa-solid fa-building-columns"></i></div>
+          <h3>Direção Escolar</h3>
+          <p>Responsável por garantir a aplicação das regras de convivência, disciplina e proteção de toda a comunidade.</p>
+        </div>
 
-.page-section.active {
-    display: block;
-}
+        <div class="help-card">
+          <div class="help-icon"><i class="fa-solid fa-house-chimney-window"></i></div>
+          <h3>Familiares</h3>
+          <p>Adultos de sua confiança no ambiente doméstico que podem te acolher, orientar e proteger.</p>
+        </div>
+      </div>
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+      <div class="cvv-banner">
+        <div class="cvv-content">
+          <div class="cvv-badge"><i class="fa-solid fa-phone-volume"></i> Apoio 24 Horas</div>
+          <h3>Precisa conversar com alguém agora mesmo?</h3>
+          <p>Entre em contato com o <strong>CVV (Centro de Valorização da Vida)</strong>. Atendimento gratuito, sigiloso e disponível a qualquer hora.</p>
+        </div>
+        <a href="tel:188" class="cvv-btn">
+          <i class="fa-solid fa-phone"></i> Ligue 188
+        </a>
+      </div>
+    </div>
+  </section>
 
-.section-header {
-    margin-bottom: 2rem;
-}
+  <section id="quiz" class="section quiz-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-solid fa-brain"></i> Conscientização</span>
+        <h2>Quiz: Teste seus Conhecimentos</h2>
+        <p>Responda às 5 perguntas abaixo para avaliar seu entendimento sobre respeito, empatia e segurança digital.</p>
+      </div>
 
-.section-header h2 {
-    font-size: 1.8rem;
-    color: var(--primary);
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-}
+      <div class="quiz-card">
+        <div class="quiz-progress">
+          <div id="quiz-progress-bar" class="progress-bar"></div>
+        </div>
 
-/* --- PÁGINA INICIAL --- */
-.hero-card {
-    background: linear-gradient(135deg, var(--primary), #6366f1);
-    color: white;
-    padding: 3rem 2rem;
-    border-radius: var(--radius);
-    text-align: center;
-    box-shadow: var(--shadow);
-    margin-bottom: 2rem;
-}
+        <form id="quiz-form">
+          <div class="quiz-question-block">
+            <h4>1. Um estudante é constantemente apelidado de forma pejorativa no grupo da turma, mesmo pedindo para pararem. Isso é bullying?</h4>
+            <div class="quiz-options">
+              <label class="quiz-option">
+                <input type="radio" name="q1" value="correct">
+                <span>Sim, trata-se de bullying psicológico e verbal.</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q1" value="incorrect">
+                <span>Não, é apenas uma brincadeira inofensiva entre colegas.</span>
+              </label>
+            </div>
+          </div>
 
-.hero-card h1 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-}
+          <div class="quiz-question-block">
+            <h4>2. Criar perfis falsos nas redes sociais para espalhar fofocas ou ridicularizar um colega demonstra respeito?</h4>
+            <div class="quiz-options">
+              <label class="quiz-option">
+                <input type="radio" name="q2" value="incorrect">
+                <span>Sim, afinal a internet é um espaço totalmente livre.</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q2" value="correct">
+                <span>Não, isso se caracteriza como Cyberbullying e fere a dignidade da pessoa.</span>
+              </label>
+            </div>
+          </div>
 
-.welcome-badge {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(5px);
-    padding: 1rem;
-    border-radius: 12px;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.8rem;
-    margin-bottom: 1.5rem;
-}
+          <div class="quiz-question-block">
+            <h4>3. Como você deve agir se presenciar um colega sofrendo agressões ou isolamento proposital?</h4>
+            <div class="quiz-options">
+              <label class="quiz-option">
+                <input type="radio" name="q3" value="correct">
+                <span>Apoiando a vítima e avisando um professor ou equipe pedagógica.</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q3" value="incorrect">
+                <span>Filmar com o celular e dar risada junto com os outros.</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q3" value="incorrect2">
+                <span>Fingir que não viu para evitar qualquer transtorno pessoal.</span>
+              </label>
+            </div>
+          </div>
 
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
+          <div class="quiz-question-block">
+            <h4>4. Em relação à segurança digital, compartilhar senhas pessoais com colegas é uma atitude segura?</h4>
+            <div class="quiz-options">
+              <label class="quiz-option">
+                <input type="radio" name="q4" value="incorrect">
+                <span>Sim, pois demonstra total confiança na amizade.</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q4" value="correct">
+                <span>Não, senhas devem ser mantidas secretas para evitar invasões e exposições.</span>
+              </label>
+            </div>
+          </div>
 
-.card {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1.2rem;
-    box-shadow: var(--shadow);
-}
+          <div class="quiz-question-block">
+            <h4>5. Guardar sentimentos de ansiedade provocados por ataques na escola sem contar a ninguém é a melhor opção?</h4>
+            <div class="quiz-options">
+              <label class="quiz-option">
+                <input type="radio" name="q5" value="incorrect">
+                <span>Sim, o tempo resolve tudo sozinho sem necessidade de falar.</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q5" value="correct">
+                <span>Não, buscar ajuda é um ato de coragem e o primeiro passo para a solução.</span>
+              </label>
+            </div>
+          </div>
 
-.card-img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-}
+          <button type="submit" class="btn btn-primary btn-block">
+            <i class="fa-solid fa-square-check"></i> Finalizar Quiz e Ver Resultado
+          </button>
+        </form>
 
-.card h3 {
-    margin-bottom: 0.5rem;
-    color: var(--primary);
-}
+        <div id="quiz-result" class="quiz-result hidden">
+          <div class="result-score" id="result-score">0/5</div>
+          <h3 id="result-title">Resultado do seu Quiz</h3>
+          <p id="result-msg"></p>
+          <button id="btn-retry-quiz" class="btn btn-secondary"><i class="fa-solid fa-rotate-right"></i> Refazer o Quiz</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-/* --- PORTAL DE ESCUTA --- */
-.simulation-alert {
-    background-color: rgba(245, 158, 11, 0.15);
-    border-left: 4px solid var(--accent);
-    padding: 1rem;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-}
+  <section id="referencias" class="section ref-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-solid fa-bookmark"></i> Embasamento</span>
+        <h2>Fontes e Referências Oficiais</h2>
+        <p>Confira os portais institucionais e científicos que embasam este projeto de conscientização:</p>
+      </div>
 
-.custom-form .form-group {
-    margin-bottom: 1rem;
-}
+      <div class="ref-grid">
+        <a href="https://www.gov.br/mec" target="_blank" rel="noopener noreferrer" class="ref-card">
+          <div class="ref-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="ref-body">
+            <h4>Ministério da Educação (MEC)</h4>
+            <p>Programa de Combate ao Bullying: Diretrizes e materiais educativos oficiais.</p>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square ref-external"></i>
+        </a>
 
-.custom-form label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
+        <a href="https://www.cvv.org.br" target="_blank" rel="noopener noreferrer" class="ref-card">
+          <div class="ref-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+          <div class="ref-body">
+            <h4>CVV — Centro de Valorização da Vida</h4>
+            <p>Apoio emocional gratuito e prevenção ao suicídio 24h por dia.</p>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square ref-external"></i>
+        </a>
 
-.custom-form textarea {
-    width: 100%;
-    height: 140px;
-    padding: 1rem;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    background-color: var(--bg-card);
-    color: var(--text-color);
-    font-size: 1rem;
-    outline: none;
-}
+        <a href="https://www.paho.org/pt" target="_blank" rel="noopener noreferrer" class="ref-card">
+          <div class="ref-icon"><i class="fa-solid fa-globe"></i></div>
+          <div class="ref-body">
+            <h4>OPAS / OMS</h4>
+            <p>Relatórios globais sobre saúde mental e bem-estar de adolescentes e jovens.</p>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square ref-external"></i>
+        </a>
 
-.custom-form textarea:focus {
-    border-color: var(--primary);
-}
+        <a href="https://new.safernet.org.br" target="_blank" rel="noopener noreferrer" class="ref-card">
+          <div class="ref-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="ref-body">
+            <h4>SaferNet Brasil</h4>
+            <p>Guia prático e cartilhas de prevenção ao cyberbullying e crimes virtuais.</p>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square ref-external"></i>
+        </a>
+      </div>
+    </div>
+  </section>
 
-.btn-primary {
-    background-color: var(--primary);
-    color: white;
-    border: none;
-    padding: 0.9rem 1.8rem;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 10px;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-}
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <a href="#inicio" class="logo">
+          <i class="fa-solid fa-heart-pulse logo-icon"></i>
+          <span>Acolher <strong>& Proteger</strong></span>
+        </a>
+        <p>Projeto de conscientização escolar voltado para a promoção da saúde mental e combate ao bullying.</p>
+      </div>
+      <div class="footer-links">
+        <p>© Projeto de Conscientização sobre Saúde Emocional e Combate ao Bullying. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
 
-.btn-primary:hover {
-    background-color: var(--primary-hover);
-}
-
-.auto-reply {
-    background-color: rgba(16, 185, 129, 0.15);
-    border-left: 4px solid var(--secondary);
-    padding: 1.5rem;
-    border-radius: 10px;
-    margin-top: 1.5rem;
-}
-
-.auto-reply.hidden { display: none; }
-
-.reply-header {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    color: var(--secondary);
-    margin-bottom: 0.5rem;
-}
-
-.divider {
-    margin: 2.5rem 0;
-    border: 0;
-    border-top: 1px solid var(--border);
-}
-
-.quotes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.quote-card {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border);
-    padding: 1.2rem;
-    border-radius: 10px;
-    font-style: italic;
-}
-
-.quote-card cite {
-    display: block;
-    margin-top: 0.5rem;
-    font-style: normal;
-    font-weight: 600;
-    color: var(--primary);
-}
-
-.help-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin: 1.5rem 0;
-}
-
-.help-item {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border);
-    padding: 1.2rem;
-    border-radius: 12px;
-    text-align: center;
-}
-
-.help-item i {
-    font-size: 2rem;
-    color: var(--primary);
-    margin-bottom: 0.8rem;
-}
-
-.emergency-box {
-    background-color: rgba(59, 130, 246, 0.1);
-    border: 1px solid var(--primary);
-    padding: 1.2rem;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-/* --- QUIZ --- */
-.quiz-card {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border);
-    padding: 1.5rem;
-    border-radius: 12px;
-    margin-bottom: 1.2rem;
-}
-
-.quiz-question {
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
-
-.quiz-option {
-    display: block;
-    padding: 0.6rem 0;
-    cursor: pointer;
-}
-
-.quiz-result {
-    margin-top: 2rem;
-    padding: 1.5rem;
-    border-radius: 12px;
-    background-color: var(--bg-card);
-    border: 2px solid var(--primary);
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: 700;
-}
-
-.quiz-result.hidden { display: none; }
-
-/* --- REFERÊNCIAS --- */
-.references-list {
-    list-style: none;
-    display: grid;
-    gap: 1rem;
-}
-
-.references-list li {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border);
-    padding: 1.2rem;
-    border-radius: 12px;
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-}
-
-.references-list i {
-    font-size: 1.5rem;
-    color: var(--primary);
-    margin-top: 0.2rem;
-}
-
-.references-list a {
-    color: var(--primary);
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-block;
-    margin-top: 0.5rem;
-}
-
-/* --- BOTÃO VOLTAR AO TOPO & RODAPÉ --- */
-#btn-back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--primary);
-    color: white;
-    border: none;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    box-shadow: var(--shadow);
-}
-
-.main-footer {
-    background-color: var(--bg-card);
-    border-top: 1px solid var(--border);
-    padding: 1.5rem 0;
-    text-align: center;
-    color: var(--text-muted);
-    font-size: 0.9rem;
-}
+  <script src="script.js"></script>
+</body>
+</html>

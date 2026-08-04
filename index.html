@@ -1,245 +1,377 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saúde Emocional e o Bullying nos Colégios de Hoje em Dia</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saúde Emocional & Combate ao Bullying | Acolher & Proteger</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="accessibility-bar">
-        <div class="container accessibility-container">
-            <button id="btn-font-increase" title="Aumentar Fonte"><i class="fa-solid fa-font"></i> A+</button>
-            <button id="btn-font-decrease" title="Diminuir Fonte"><i class="fa-solid fa-font"></i> A-</button>
-            <button id="btn-dark-mode" title="Modo Escuro"><i class="fa-solid fa-moon"></i> Modo Escuro</button>
-            <button id="btn-high-contrast" title="Alto Contraste"><i class="fa-solid fa-circle-half-stroke"></i> Alto Contraste</button>
-        </div>
+  <div class="accessibility-bar">
+    <div class="container accessibility-content">
+      <span class="accessibility-title"><i class="fa-solid fa-universal-access"></i> Acessibilidade:</span>
+      <div class="accessibility-btns">
+        <button id="btn-font-increase" title="Aumentar Fonte">A+</button>
+        <button id="btn-font-decrease" title="Diminuir Fonte">A-</button>
+        <button id="btn-dark-mode" title="Alternar Modo Escuro"><i class="fa-solid fa-moon"></i> Modo Escuro</button>
+        <button id="btn-contrast" title="Alto Contraste"><i class="fa-solid fa-circle-half-stroke"></i> Alto Contraste</button>
+      </div>
     </div>
+  </div>
 
-    <header class="main-header">
-        <div class="container header-content">
-            <div class="logo">
-                <i class="fa-solid fa-heart-pulse logo-icon"></i>
-                <span>Acolher & Proteger</span>
-            </div>
-            <nav class="main-nav">
-                <button class="nav-btn active" onclick="switchTab('inicio')"><i class="fa-solid fa-house"></i> Início</button>
-                <button class="nav-btn" onclick="switchTab('escuta')"><i class="fa-solid fa-comments"></i> Portal de Escuta</button>
-                <button class="nav-btn" onclick="switchTab('quiz')"><i class="fa-solid fa-circle-question"></i> Quiz</button>
-                <button class="nav-btn" onclick="switchTab('referencias')"><i class="fa-solid fa-book-bookmark"></i> Referências</button>
-            </nav>
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#inicio" class="logo">
+        <i class="fa-solid fa-heart-pulse logo-icon"></i>
+        <span>Acolher <strong>& Proteger</strong></span>
+      </a>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#inicio" class="nav-link active">Início</a>
+        <a href="#escuta" class="nav-link">Portal de Escuta</a>
+        <a href="#ajuda" class="nav-link">Com Quem Falar</a>
+        <a href="#quiz" class="nav-link">Quiz</a>
+        <a href="#referencias" class="nav-link">Referências</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="inicio" class="hero-section">
+    <div class="container hero-container">
+      <div class="hero-badge"><i class="fa-solid fa-shield-heart"></i> Ambiente Escolar Seguro & Empático</div>
+      <h1 class="hero-title">Saúde Emocional e o Combate ao Bullying nas Escolas</h1>
+      <p class="hero-subtitle">"Você não está sozinho nessa." Um espaço dedicado a ouvir, acolher, orientar e promover o respeito no ambiente escolar.</p>
+      
+      <div class="hero-actions">
+        <a href="#escuta" class="btn btn-primary"><i class="fa-solid fa-comment-dots"></i> Portal de Escuta</a>
+        <a href="#quiz" class="btn btn-secondary"><i class="fa-solid fa-list-check"></i> Fazer o Quiz</a>
+      </div>
+
+      <div class="pilares-grid">
+        <div class="pillar-card">
+          <div class="pillar-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Empatia e Respeito">
+            <span class="pillar-tag">Empatia</span>
+          </div>
+          <div class="pillar-content">
+            <h3><i class="fa-solid fa-hands-holding-heart"></i> Empatia e Respeito</h3>
+            <p>Reconhecer e valorizar as diferenças individuais é o pilar fundamental para transformar a cultura da nossa escola num espaço acolhedor.</p>
+          </div>
         </div>
-    </header>
 
-    <main class="container content-area">
-
-        <section id="inicio" class="page-section active">
-            <div class="hero-card">
-                <h1>Saúde emocional e o bullying nos colégios de hoje em dia</h1>
-                <div class="welcome-badge">
-                    <i class="fa-solid fa-hand-holding-heart"></i>
-                    <h2>"Você não está sozinho nessa."</h2>
-                </div>
-                <p>O ambiente escolar deve ser um espaço seguro de crescimento, aprendizado e empatia. Aqui você encontra apoio, orientação e um lugar seguro para refletir sobre o bem-estar emocional.</p>
-            </div>
-
-            <div class="features-grid">
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80" alt="Amigos se apoiando no colégio" class="card-img">
-                    <h3>Empatia e Respeito</h3>
-                    <p>Reconhecer as diferenças e acolher o colega é a base para transformar a cultura escolar.</p>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Escuta atenta e diálogo" class="card-img">
-                    <h3>Sua Voz Tem Valor</h3>
-                    <p>Falar sobre os seus sentimentos é o primeiro passo para aliviar o peso e encontrar soluções.</p>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80" alt="Estudantes em ambiente acolhedor" class="card-img">
-                    <h3>Juntos Somos Mais Fortes</h3>
-                    <p>Combater o bullying requer a união de alunos, professores, famílias e toda a comunidade.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="escuta" class="page-section">
-            <div class="section-header">
-                <h2><i class="fa-solid fa-user-shield"></i> Portal de Escuta Anônimo</h2>
-                <p>Sinta-se à vontade para desabafar. Este é um espaço seguro e protegido.</p>
-            </div>
-
-            <div class="simulation-alert">
-                <i class="fa-solid fa-lock"></i>
-                <span><strong>Simulação:</strong> Nenhuma informação digitada neste formulário será armazenada ou enviada a servidores.</span>
-            </div>
-
-            <form id="ventForm" class="custom-form">
-                <div class="form-group">
-                    <label for="ventText">Como você está se sentindo hoje? Escreva seu desabafo:</label>
-                    <textarea id="ventText" placeholder="Digite aqui o que está em seu coração..." required></textarea>
-                </div>
-                <button type="submit" class="btn-primary"><i class="fa-solid fa-paper-plane"></i> Enviar Desabafo</button>
-            </form>
-
-            <div id="autoReply" class="auto-reply hidden">
-                <div class="reply-header">
-                    <i class="fa-solid fa-circle-check"></i>
-                    <h3>Sua mensagem foi recebida com carinho!</h3>
-                </div>
-                <p>Obrigado por ter a coragem de compartilhar o que sente. Lembre-se: guardar sentimentos pesados só para você pode ser desgastante. Respire fundo, cuide de você e considere conversar com uma pessoa de confiança.</p>
-            </div>
-
-            <hr class="divider">
-
-            <h3><i class="fa-solid fa-star"></i> Gotas de Inspiração</h3>
-            <div class="quotes-grid">
-                <blockquote class="quote-card">
-                    <p>"Ninguém pode fazer você se sentir inferior sem o seu consentimento."</p>
-                    <cite>— Eleanor Roosevelt</cite>
-                </blockquote>
-                <blockquote class="quote-card">
-                    <p>"Pedir ajuda não é sinal de fraqueza, mas sim o primeiro passo para a coragem."</p>
-                    <cite>— Apoio Emocional</cite>
-                </blockquote>
-                <blockquote class="quote-card">
-                    <p>"Seu valor não diminui com base na incapacidade de alguém em enxergar a sua importância."</p>
-                    <cite>— Autocuidado</cite>
-                </blockquote>
-            </div>
-
-            <hr class="divider">
-
-            <div class="help-guide">
-                <h3><i class="fa-solid fa-hands-holding-child"></i> Com quem procurar ajuda?</h3>
-                <p>Se você ou um colega está enfrentando situações difíceis de bullying ou sofrimento emocional, procure suporte imediatamente:</p>
-                <div class="help-cards-grid">
-                    <div class="help-item">
-                        <i class="fa-solid fa-chalkboard-user"></i>
-                        <h4>Professores</h4>
-                        <p>Eles acompanham sua rotina e podem intervir rapidamente na sala de aula.</p>
-                    </div>
-                    <div class="help-item">
-                        <i class="fa-solid fa-user-graduate"></i>
-                        <h4>Pedagogo / Orientador</h4>
-                        <p>Profissionais capacitados para acolher suas emoções e mediar conflitos.</p>
-                    </div>
-                    <div class="help-item">
-                        <i class="fa-solid fa-building-user"></i>
-                        <h4>Direção Escolar</h4>
-                        <p>Responsável por aplicar as regras de convivência e proteger a comunidade.</p>
-                    </div>
-                    <div class="help-item">
-                        <i class="fa-solid fa-house-chimney-user"></i>
-                        <h4>Familiares</h4>
-                        <p>Adultos de confiança no seu lar podem te dar a proteção e o abraço que você precisa.</p>
-                    </div>
-                </div>
-                <div class="emergency-box">
-                    <i class="fa-solid fa-phone-volume"></i>
-                    <span>Precisa conversar agora? Ligue para o <strong>CVV (Centro de Valorização da Vida)</strong> pelo número <strong>188</strong> (Ligação gratuita e anônima 24h).</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="quiz" class="page-section">
-            <div class="section-header">
-                <h2><i class="fa-solid fa-gamepad"></i> Quiz: Teste seus Conhecimentos</h2>
-                <p>Responda às 5 perguntas abaixo para entender mais sobre respeito e convivência.</p>
-            </div>
-
-            <form id="quizForm" class="quiz-container">
-                <div class="quiz-card">
-                    <p class="quiz-question">1. Um estudante é constantemente apelidado de forma pejorativa no grupo da turma, mesmo pedindo para pararem. Isso é bullying?</p>
-                    <label class="quiz-option"><input type="radio" name="q1" value="sim" required> Sim, é bullying interpessoal/psicológico.</label>
-                    <label class="quiz-option"><input type="radio" name="q1" value="nao"> Não, é apenas uma brincadeira inofensiva.</label>
-                </div>
-
-                <div class="quiz-card">
-                    <p class="quiz-question">2. Criar perfis falsos nas redes sociais para espalhar fofocas ou ridicularizar um colega demonstra respeito?</p>
-                    <label class="quiz-option"><input type="radio" name="q2" value="sim"> Sim, pois a internet é livre.</label>
-                    <label class="quiz-option"><input type="radio" name="q2" value="nao" required> Não, isso é Cyberbullying e fere a dignidade do colega.</label>
-                </div>
-
-                <div class="quiz-card">
-                    <p class="quiz-question">3. Como agir se você presenciar um colega sofrendo agressões ou sendo isolado propositalmente?</p>
-                    <label class="quiz-option"><input type="radio" name="q3" value="correto" required> Apoiando a vítima e avisando um professor, pedagogo ou adulto de confiança.</label>
-                    <label class="quiz-option"><input type="radio" name="q3" value="errado1"> Filmar com o celular e dar risada junto com a turma.</label>
-                    <label class="quiz-option"><input type="radio" name="q3" value="errado2"> Fingir que não viu nada para não arrumar problemas.</label>
-                </div>
-
-                <div class="quiz-card">
-                    <p class="quiz-question">4. Em relação à segurança digital, compartilhar senhas pessoais com colegas de turma é uma atitude segura?</p>
-                    <label class="quiz-option"><input type="radio" name="q4" value="sim"> Sim, demonstra total confiança no amigo.</label>
-                    <label class="quiz-option"><input type="radio" name="q4" value="nao" required> Não, senhas devem ser secretas para evitar invasões e exposições desnecessárias.</label>
-                </div>
-
-                <div class="quiz-card">
-                    <p class="quiz-question">5. Guardar sentimentos de tristeza ou ansiedade gerados por ataques na escola sem falar com ninguém é a melhor escolha?</p>
-                    <label class="quiz-option"><input type="radio" name="q5" value="sim"> Sim, o tempo resolve tudo sozinho.</label>
-                    <label class="quiz-option"><input type="radio" name="q5" value="nao" required> Não, pedir ajuda é um sinal de coragem e o caminho para resolver a situação.</label>
-                </div>
-
-                <button type="submit" class="btn-primary"><i class="fa-solid fa-square-check"></i> Finalizar Quiz e Ver Resultado</button>
-            </form>
-
-            <div id="quizResult" class="quiz-result hidden"></div>
-        </section>
-
-        <section id="referencias" class="page-section">
-            <div class="section-header">
-                <h2><i class="fa-solid fa-graduation-cap"></i> Página de Referências</h2>
-                <p>Confira as fontes científicas, institucionais e educacionais utilizadas na elaboração deste portal.</p>
-            </div>
-
-            <ul class="references-list">
-                <li>
-                    <i class="fa-solid fa-link"></i>
-                    <div>
-                        <strong>Ministério da Educação (MEC) — Programa de Combate ao Bullying</strong>
-                        <p>Diretrizes e materiais educativos para conscientização no ambiente escolar.</p>
-                        <a href="https://www.gov.br/mec" target="_blank" rel="noopener noreferrer">Acessar portal oficial <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </li>
-                <li>
-                    <i class="fa-solid fa-link"></i>
-                    <div>
-                        <strong>CVV — Centro de Valorização da Vida</strong>
-                        <p>Apoio emocional e prevenção do suicídio com atendimento gratuito e sigiloso.</p>
-                        <a href="https://www.cvv.org.br" target="_blank" rel="noopener noreferrer">Conhecer o CVV <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </li>
-                <li>
-                    <i class="fa-solid fa-link"></i>
-                    <div>
-                        <strong>OPAS / OMS — Organização Pan-Americana da Saúde</strong>
-                        <p>Relatórios e orientações globais sobre a saúde mental de crianças e adolescentes.</p>
-                        <a href="https://www.paho.org/pt" target="_blank" rel="noopener noreferrer">Ver publicações da OPAS <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </li>
-                <li>
-                    <i class="fa-solid fa-link"></i>
-                    <div>
-                        <strong>Cartilha de Prevenção ao Cyberbullying — SaferNet Brasil</strong>
-                        <p>Guia prático para segurança digital e combate à violência nas redes.</p>
-                        <a href="https://new.safernet.org.br" target="_blank" rel="noopener noreferrer">Acessar cartilhas educativas <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </li>
-            </ul>
-        </section>
-
-    </main>
-
-    <button id="btn-back-to-top" title="Voltar ao topo"><i class="fa-solid fa-arrow-up"></i></button>
-
-    <footer class="main-footer">
-        <div class="container">
-            <p>&copy; Projeto de Conscientização sobre Saúde Emocional e Combate ao Bullying. Todos os direitos reservados.</p>
+        <div class="pillar-card">
+          <div class="pillar-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80" alt="Sua Voz Tem Valor">
+            <span class="pillar-tag">Voz</span>
+          </div>
+          <div class="pillar-content">
+            <h3><i class="fa-solid fa-comments"></i> Sua Voz Tem Valor</h3>
+            <p>Expressar o que você sente é o primeiro passo para aliviar o peso do sofrimento emocional. Falar sempre é o caminho mais seguro.</p>
+          </div>
         </div>
-    </footer>
 
-    <script src="script.js"></script>
+        <div class="pillar-card">
+          <div class="pillar-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="Juntos Somos Mais Fortes">
+            <span class="pillar-tag">União</span>
+          </div>
+          <div class="pillar-content">
+            <h3><i class="fa-solid fa-people-group"></i> Juntos Somos Mais Fortes</h3>
+            <p>Combater o bullying e o cyberbullying exige a união consciente de alunos, professores, orientação pedagógica e famílias.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="escuta" class="section portal-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-solid fa-user-shield"></i> Espaço Seguro e 100% Anônimo</span>
+        <h2>Portal de Escuta Anônimo</h2>
+        <p>Sinta-se à vontade para desabafar. Nenhuma informação digitada aqui é salva ou enviada para servidores externos.</p>
+      </div>
+
+      <div class="escuta-box">
+        <form id="form-escuta">
+          <label class="form-label">Como você está se sentindo hoje?</label>
+          <div class="emotions-picker">
+            <button type="button" class="btn-emotion" data-emotion="Triste">😟 Triste</button>
+            <button type="button" class="btn-emotion" data-emotion="Ansioso">😰 Ansioso</button>
+            <button type="button" class="btn-emotion" data-emotion="Com Raiva">😡 Com Raiva</button>
+            <button type="button" class="btn-emotion" data-emotion="Confuso">😕 Confuso</button>
+            <button type="button" class="btn-emotion active" data-emotion="Esperançoso">🌱 Esperançoso</button>
+          </div>
+
+          <label for="desabafo-text" class="form-label">Escreva seu desabafo ou pensamentos:</label>
+          <textarea id="desabafo-text" placeholder="Digite aqui livremente o que está em seu coração..." rows="5" required></textarea>
+
+          <button type="submit" class="btn btn-primary btn-block">
+            <i class="fa-solid fa-paper-plane"></i> Enviar Desabafo Anônimo
+          </button>
+        </form>
+
+        <div id="escuta-feedback" class="escuta-feedback hidden">
+          <div class="feedback-icon"><i class="fa-solid fa-heart-circle-check"></i></div>
+          <h3>Sua mensagem foi recebida com carinho!</h3>
+          <p>Obrigado por ter a coragem de compartilhar seus sentimentos. Lembre-se: guardar emoções pesadas sozinho pode ser exaustivo. Respire fundo, cuide de você e considere buscar apoio com pessoas de confiança.</p>
+          <button id="btn-novo-desabafo" class="btn btn-outline">Escrever outro desabafo</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section quotes-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Gotas de Inspiração</h2>
+        <p>Reflexões para fortalecer sua jornada diária.</p>
+      </div>
+
+      <div class="quotes-grid">
+        <div class="quote-card">
+          <i class="fa-solid fa-quote-left quote-icon"></i>
+          <p>"Ninguém pode fazer você se sentir inferior sem o seu consentimento."</p>
+          <span>— Eleanor Roosevelt</span>
+        </div>
+        <div class="quote-card">
+          <i class="fa-solid fa-quote-left quote-icon"></i>
+          <p>"Pedir ajuda não é sinal de fraqueza, mas sim o primeiro passo para a coragem."</p>
+          <span>— Apoio Emocional</span>
+        </div>
+        <div class="quote-card">
+          <i class="fa-solid fa-quote-left quote-icon"></i>
+          <p>"Seu valor não diminui com base na incapacidade de alguém em enxergar sua importância."</p>
+          <span>— Autocuidado</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ajuda" class="section help-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-solid fa-hand-holding-hand"></i> Rede de Apoio</span>
+        <h2>Com quem procurar ajuda?</h2>
+        <p>Se você ou um colega está enfrentando situações de bullying ou sofrimento psicológico, procure suporte imediatamente:</p>
+      </div>
+
+      <div class="help-grid">
+        <div class="help-card">
+          <div class="help-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+          <h3>Professores</h3>
+          <p>Acompanham sua rotina escolar diariamente e podem intervir rapidamente para sanar situações de desrespeito.</p>
+        </div>
+
+        <div class="help-card">
+          <div class="help-icon"><i class="fa-solid fa-user-graduate"></i></div>
+          <h3>Pedagogo / Orientador</h3>
+          <p>Profissionais qualificados para escutar suas emoções com sigilo, acolher angústias e mediar conflitos.</p>
+        </div>
+
+        <div class="help-card">
+          <div class="help-icon"><i class="fa-solid fa-building-columns"></i></div>
+          <h3>Direção Escolar</h3>
+          <p>Responsável por garantir a aplicação das regras de convivência, disciplina e proteção de toda a comunidade.</p>
+        </div>
+
+        <div class="help-card">
+          <div class="help-icon"><i class="fa-solid fa-house-chimney-window"></i></div>
+          <h3>Familiares</h3>
+          <p>Adultos de sua confiança no ambiente doméstico que podem te acolher, orientar e proteger.</p>
+        </div>
+      </div>
+
+      <div class="cvv-banner">
+        <div class="cvv-content">
+          <div class="cvv-badge"><i class="fa-solid fa-phone-volume"></i> Apoio 24 Horas</div>
+          <h3>Precisa conversar com alguém agora mesmo?</h3>
+          <p>Entre em contato com o <strong>CVV (Centro de Valorização da Vida)</strong>. Atendimento gratuito, sigiloso e disponível a qualquer hora.</p>
+        </div>
+        <a href="tel:188" class="cvv-btn">
+          <i class="fa-solid fa-phone"></i> Ligue 188
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="quiz" class="section quiz-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-solid fa-brain"></i> Conscientização</span>
+        <h2>Quiz: Teste seus Conhecimentos</h2>
+        <p>Responda às 5 perguntas abaixo para avaliar seu entendimento sobre respeito, empatia e segurança digital.</p>
+      </div>
+
+      <div class="quiz-card">
+        <div class="quiz-progress">
+          <div id="quiz-progress-bar" class="progress-bar"></div>
+        </div>
+
+        <form id="quiz-form">
+          <div class="quiz-question-block">
+            <h4>1. Um estudante é constantemente apelidado de forma pejorativa no grupo da turma, mesmo pedindo para pararem. Isso é bullying?</h4>
+            <div class="quiz-options">
+              <label class="quiz-option">
+                <input type="radio" name="q1" value="correct">
+                <span>Sim, trata-se de bullying psicológico e verbal.</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q1" value="incorrect">
+                <span>Não, é apenas uma brincadeira inofensiva entre colegas.</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="quiz-question-block">
+            <h4>2. Criar perfis falsos nas redes sociais para espalhar fofocas ou ridicularizar um colega demonstra respeito?</h4>
+            <div class="quiz-options">
+              <label class="quiz-option">
+                <input type="radio" name="q2" value="incorrect">
+                <span>Sim, afinal a internet é um espaço totalmente livre.</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q2" value="correct">
+                <span>Não, isso se caracteriza como Cyberbullying e fere a dignidade da pessoa.</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="quiz-question-block">
+            <h4>3. Como você deve agir se presenciar um colega sofrendo agressões ou isolamento proposital?</h4>
+            <div class="quiz-options">
+              <label class="quiz-option">
+                <input type="radio" name="q3" value="correct">
+                <span>Apoiando a vítima e avisando um professor ou equipe pedagógica.</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q3" value="incorrect">
+                <span>Filmar com o celular e dar risada junto com os outros.</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q3" value="incorrect2">
+                <span>Fingir que não viu para evitar qualquer transtorno pessoal.</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="quiz-question-block">
+            <h4>4. Em relação à segurança digital, compartilhar senhas pessoais com colegas é uma atitude segura?</h4>
+            <div class="quiz-options">
+              <label class="quiz-option">
+                <input type="radio" name="q4" value="incorrect">
+                <span>Sim, pois demonstra total confiança na amizade.</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q4" value="correct">
+                <span>Não, senhas devem ser mantidas secretas para evitar invasões e exposições.</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="quiz-question-block">
+            <h4>5. Guardar sentimentos de ansiedade provocados por ataques na escola sem contar a ninguém é a melhor opção?</h4>
+            <div class="quiz-options">
+              <label class="quiz-option">
+                <input type="radio" name="q5" value="incorrect">
+                <span>Sim, o tempo resolve tudo sozinho sem necessidade de falar.</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q5" value="correct">
+                <span>Não, buscar ajuda é um ato de coragem e o primeiro passo para a solução.</span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">
+            <i class="fa-solid fa-square-check"></i> Finalizar Quiz e Ver Resultado
+          </button>
+        </form>
+
+        <div id="quiz-result" class="quiz-result hidden">
+          <div class="result-score" id="result-score">0/5</div>
+          <h3 id="result-title">Resultado do seu Quiz</h3>
+          <p id="result-msg"></p>
+          <button id="btn-retry-quiz" class="btn btn-secondary"><i class="fa-solid fa-rotate-right"></i> Refazer o Quiz</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="referencias" class="section ref-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-solid fa-bookmark"></i> Embasamento</span>
+        <h2>Fontes e Referências Oficiais</h2>
+        <p>Confira os portais institucionais e científicos que embasam este projeto de conscientização:</p>
+      </div>
+
+      <div class="ref-grid">
+        <a href="https://www.gov.br/mec" target="_blank" rel="noopener noreferrer" class="ref-card">
+          <div class="ref-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="ref-body">
+            <h4>Ministério da Educação (MEC)</h4>
+            <p>Programa de Combate ao Bullying: Diretrizes e materiais educativos oficiais.</p>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square ref-external"></i>
+        </a>
+
+        <a href="https://www.cvv.org.br" target="_blank" rel="noopener noreferrer" class="ref-card">
+          <div class="ref-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+          <div class="ref-body">
+            <h4>CVV — Centro de Valorização da Vida</h4>
+            <p>Apoio emocional gratuito e prevenção ao suicídio 24h por dia.</p>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square ref-external"></i>
+        </a>
+
+        <a href="https://www.paho.org/pt" target="_blank" rel="noopener noreferrer" class="ref-card">
+          <div class="ref-icon"><i class="fa-solid fa-globe"></i></div>
+          <div class="ref-body">
+            <h4>OPAS / OMS</h4>
+            <p>Relatórios globais sobre saúde mental e bem-estar de adolescentes e jovens.</p>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square ref-external"></i>
+        </a>
+
+        <a href="https://new.safernet.org.br" target="_blank" rel="noopener noreferrer" class="ref-card">
+          <div class="ref-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="ref-body">
+            <h4>SaferNet Brasil</h4>
+            <p>Guia prático e cartilhas de prevenção ao cyberbullying e crimes virtuais.</p>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square ref-external"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <a href="#inicio" class="logo">
+          <i class="fa-solid fa-heart-pulse logo-icon"></i>
+          <span>Acolher <strong>& Proteger</strong></span>
+        </a>
+        <p>Projeto de conscientização escolar voltado para a promoção da saúde mental e combate ao bullying.</p>
+      </div>
+      <div class="footer-links">
+        <p>© Projeto de Conscientização sobre Saúde Emocional e Combate ao Bullying. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-</html><
+</html>
