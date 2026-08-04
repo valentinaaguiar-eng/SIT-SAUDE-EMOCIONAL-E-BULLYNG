@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     navMenu.classList.toggle('show');
   });
 
-  // 2. ACESSIBILIDADE: TAMANHO DE FONTE
+  // 2. ACESSIBILIDADE
   let fontScale = 1;
   const btnFontIncrease = document.getElementById('btn-font-increase');
   const btnFontDecrease = document.getElementById('btn-font-decrease');
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 3. MODO ESCURO E ALTO CONTRASTE
+  // 3. MODO ESCURO E CONTRASTE
   const btnDarkMode = document.getElementById('btn-dark-mode');
   const btnContrast = document.getElementById('btn-contrast');
 
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.remove('dark-mode');
   });
 
-  // 4. SELETOR DE EMOÇÕES E PORTAL DE ESCUTA
+  // 4. PORTAL DE ESCUTA ANÔNIMO
   const emotionBtns = document.querySelectorAll('.btn-emotion');
   const formEscuta = document.getElementById('form-escuta');
   const escutaFeedback = document.getElementById('escuta-feedback');
@@ -103,14 +103,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (resultScore) resultScore.textContent = `${score} / 5`;
 
     if (score === 5) {
-      resultTitle.textContent = "Incrível! 🎉";
-      resultMsg.textContent = "Você é um verdadeiro exemplo de empatia e consciência escolar!";
+      resultTitle.textContent = "Pontuação Máxima! 🎉";
+      resultMsg.textContent = "Você deu um show de respeito, empatia e segurança escolar!";
     } else if (score >= 3) {
-      resultTitle.textContent = "Muito Bom! 👍";
-      resultMsg.textContent = "Você demonstra grande respeito pelos colegas. Continue praticando o bem!";
+      resultTitle.textContent = "Muito Bom! 🌟";
+      resultMsg.textContent = "Você está no caminho certo para espalhar boas atitudes no colégio.";
     } else {
-      resultTitle.textContent = "Vamos Juntos Aprendendo! 🌱";
-      resultMsg.textContent = "A empatia se constrói no dia a dia. Dê uma olhadinha nos tópicos de prevenção e tente novamente!";
+      resultTitle.textContent = "Vamos Aprender Juntos! 🌱";
+      resultMsg.textContent = "Dê uma olhadinha nos tópicos da página e tente de novo!";
     }
   });
 
